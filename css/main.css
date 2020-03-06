@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  background: #000000;
+  color: #f1f1f1;
+  font-family: monospace;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3f0d12;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #352e2f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #851d27;
+}
+
+body {
+  width: 100vw;
+  height: 150vh;
+  overflow-x: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 5rem 5fr 5fr;
+      grid-template-rows: 5rem 5fr 5fr;
+      grid-template-areas: "nav nav nav " "main main main" "main2 main2 main2";
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: nav;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 30px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+header nav ul li {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 20px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+header nav ul li:hover {
+  opacity: 1;
+}
+
+header nav ul li::before {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: #f1f1f1;
+}
+
+header nav ul li a {
+  text-decoration: none;
+}
+
+header nav ul .ltr::before {
+  width: 0%;
+  bottom: 15px;
+}
+
+header nav ul .ltr:hover::before {
+  width: 100%;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  width: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+}
+
+main .hero {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 0 15rem;
+}
+
+main .hero img {
+  margin: 5rem 0rem;
+  width: 20rem;
+  height: 18rem;
+}
+
+main .hero h1 {
+  font-size: 50px;
+  margin: 1rem 0;
+}
+
+.games {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10rem;
+  width: 100%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.games h1 {
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #a71d31), to(#3f0d12));
+  background: linear-gradient(#a71d31 30%, #3f0d12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3rem;
+}
+
+.games .cards-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #000;
+  width: 100%;
+}
+
+.games .cards-section .cards {
+  padding: 3rem 1rem;
+  margin: 1rem 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px #363636;
+          box-shadow: 0px 0px 5px #363636;
+}
+
+.games .cards-section .cards:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 3px 10px #363636;
+          box-shadow: 0px 3px 10px #363636;
+}
+
+.games .cards-section .cards a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.games .cards-section .cards .title-name {
+  background: #000;
+}
+
+.games .cards-section .cards .game-logo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1rem 1rem;
+  background: #000;
+  text-align: center;
+}
+
+.games .cards-section .cards img {
+  width: 8rem;
+  border-radius: 5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.spotify {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(0, 0, 0, 0);
+  z-index: 20;
+}
+
+.spotify iframe {
+  border: none;
+}
+
+.spotify button {
+  position: relative;
+  border: none;
+  right: -32px;
+  height: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #1db954;
+  z-index: 30;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: 0px -3px 5px rgba(29, 185, 84, 0.4);
+          box-shadow: 0px -3px 5px rgba(29, 185, 84, 0.4);
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.spotify button img {
+  width: 40px;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */
