@@ -1,5 +1,7 @@
 let spotifyPanel = document.getElementById("spotify"),
-  spotifyButton = document.getElementById("spotify-btn");
+  spotifyButton = document.getElementById("spotify-btn"),
+  redditPanel = document.getElementById("reddit"),
+  redditButton = document.getElementById("reddit-btn");
 
 spotifyButton.addEventListener(
   "click",
@@ -8,3 +10,11 @@ spotifyButton.addEventListener(
   },
   false
 );
+
+// redditButton.addEventListener(
+//   "click",
+//   function() {
+//     redditPanel.classList.toggle("hidden");
+//   },
+//   false
+// );
