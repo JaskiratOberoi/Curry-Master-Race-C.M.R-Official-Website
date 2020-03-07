@@ -4,7 +4,38 @@
   font-size: 20px;
   background: #000000;
   color: #f1f1f1;
-  font-family: monospace;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.fade-in-fwd {
+  -webkit-animation: fade-in-fwd 0.6s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-fwd 0.6s 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
 
 /* width */
@@ -14,7 +45,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #3f0d12;
+  background: #242424;
 }
 
 /* Handle */
@@ -23,20 +54,21 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #851d27;
+  background: #575757;
 }
 
 body {
+  position: relative;
   width: 100vw;
-  height: 150vh;
+  height: 200vh;
   overflow-x: hidden;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 5rem 5fr 5fr;
-      grid-template-rows: 5rem 5fr 5fr;
-      grid-template-areas: "nav nav nav " "main main main" "main2 main2 main2";
+  -ms-grid-rows: 5rem 5fr 5fr 5fr 5rem;
+      grid-template-rows: 5rem 5fr 5fr 5fr 5rem;
+      grid-template-areas: "nav nav nav " "main main main" "main2 main2 main2" "members members members" "foot foot foot";
 }
 
 header {
@@ -110,6 +142,7 @@ header nav ul .ltr::before {
 
 header nav ul .ltr:hover::before {
   width: 100%;
+  background-color: #b82e1f;
 }
 
 main {
@@ -143,6 +176,13 @@ main .hero img {
 main .hero h1 {
   font-size: 50px;
   margin: 1rem 0;
+  -webkit-animation: fade-in-fwd 0.6s 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-fwd 0.6s 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.description {
+  -webkit-animation: fade-in-fwd 0.6s 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-fwd 0.6s 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .games {
@@ -168,11 +208,12 @@ main .hero h1 {
 
 .games h1 {
   text-transform: uppercase;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #a71d31), to(#3f0d12));
-  background: linear-gradient(#a71d31 30%, #3f0d12 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #b82e1f), to(#000000));
+  background: linear-gradient(#b82e1f 30%, #000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 3rem;
+  letter-spacing: 0.2rem;
 }
 
 .games .cards-section {
@@ -216,8 +257,8 @@ main .hero h1 {
 .games .cards-section .cards:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  -webkit-box-shadow: 0px 3px 10px #363636;
-          box-shadow: 0px 3px 10px #363636;
+  -webkit-box-shadow: 0px 3px 10px #b82e1f;
+          box-shadow: 0px 3px 10px #b82e1f;
 }
 
 .games .cards-section .cards a {
@@ -350,5 +391,123 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+.footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: foot;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.footer div {
+  width: 100%;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.members {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: members;
+  margin: 4rem 3rem;
+}
+
+.members h1 {
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #b82e1f), to(#000000));
+  background: linear-gradient(#b82e1f 30%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3rem;
+  letter-spacing: 0.2rem;
+}
+
+.members .members-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.members .members-section .r1,
+.members .members-section .r2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.members .members-section .r1 .member-card,
+.members .members-section .r2 .member-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0.5rem 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.members .members-section .r1 .member-card:hover,
+.members .members-section .r2 .member-card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 3px 10px #b82e1f;
+          box-shadow: 0px 3px 10px #b82e1f;
+}
+
+.members .members-section .r1 .member-card .member-avatar,
+.members .members-section .r2 .member-card .member-avatar {
+  border-radius: 5rem;
+  margin-top: 1rem;
+}
+
+.members .members-section .r1 .member-card .member-avatar img,
+.members .members-section .r2 .member-card .member-avatar img {
+  width: 200px;
+}
+
+.members .members-section .r1 .member-card .member-name,
+.members .members-section .r2 .member-card .member-name {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=main.css.map */
