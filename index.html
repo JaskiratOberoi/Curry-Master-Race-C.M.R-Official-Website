@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="shortcut icon" type="image/png" href="./artwork/logo.png" />
+    <link rel="icon" type="image/png" href="./artwork/logo.png" />
     <title>Curry Master Race [C.M.R]</title>
   </head>
   <body>
@@ -17,7 +17,7 @@
         </div>
         <ul>
           <li class="ltr"><a href="#Games">Games</a></li>
-          <li class="ltr"><a href="#">Members</a></li>
+          <li class="ltr"><a href="#members">Members</a></li>
 
           <!-- <li class="ltr"><a href="#">About us</a></li> -->
           <li class="ltr"><a href="#">PENTHOUSE</a></li>
@@ -145,6 +145,7 @@
       data-aos="zoom-out-down"
       data-aos-delay="0"
       data-aos-duration="300"
+      id="members"
     >
       <h1>MEMBERS</h1>
       <div class="members-section">
@@ -154,6 +155,10 @@
           data-aos-delay="50"
           data-aos-duration="300"
         >
+        <a
+            href="https://steamcommunity.com/id/Samzio5574/"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img
@@ -162,7 +167,11 @@
               />
             </div>
             <div class="member-name">Samzio5574.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/id/thakurwithhands/"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img
@@ -171,19 +180,28 @@
               />
             </div>
             <div class="member-name">TheThakur.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/id/JStorm96"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img src="./artwork/Avatar-Large/Jstorm-10.jpg" alt="" />
             </div>
             <div class="member-name">JStorm96.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/id/darthk96"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img src="./artwork/Avatar-Large/Jstorm-10.jpg" alt="" />
             </div>
             <div class="member-name">DarthDukas.CMR</div>
           </div>
+          
         </div>
         <div
           class="r2"
@@ -191,18 +209,30 @@
           data-aos-delay="100"
           data-aos-duration="300"
         >
+        <a
+            href="https://steamcommunity.com/id/therealscorzero"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img src="./artwork/Avatar-Small/Sicario_Sicario.jpg" alt="" />
             </div>
             <div class="member-name">Sicario.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/id/xSpaceX"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img src="./artwork/Avatar-Small/Pluto_Pluto.jpg" alt="" />
             </div>
             <div class="member-name">Pluto.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/id/vedantmishra10"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img
@@ -211,13 +241,17 @@
               />
             </div>
             <div class="member-name">SalimShady.CMR</div>
-          </div>
+          </div></a>
+          <a
+            href="https://steamcommunity.com/profiles/76561198878609612/"
+            target="_blank"
+          >
           <div class="member-card">
             <div class="member-avatar">
               <img src="./artwork/Avatar-Large/Zero.jpg" alt="" />
             </div>
             <div class="member-name">Zero.CMR</div>
-          </div>
+          </div></a>
         </div>
       </div>
     </div>
@@ -256,6 +290,14 @@
     <script src="./script.js"></script>
     <script>
       AOS.init();
+      //Script to remove 000webhost banner
+      $(document).ready(function() {
+        $("body")
+          .find(
+            'img[src$="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]'
+          )
+          .remove();
+      });
     </script>
   </body>
 </html>

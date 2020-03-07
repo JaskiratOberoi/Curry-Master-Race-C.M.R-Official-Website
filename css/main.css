@@ -169,6 +169,7 @@ main .hero {
 
 main .hero img {
   margin: 5rem 0rem;
+  margin-bottom: 3rem;
   width: 20rem;
   height: 18rem;
 }
@@ -448,6 +449,10 @@ h1 {
           flex-direction: column;
 }
 
+.members .members-section a {
+  text-decoration: none;
+}
+
 .members .members-section .r1,
 .members .members-section .r2 {
   display: -webkit-box;
@@ -509,5 +514,9 @@ h1 {
 .members .members-section .r2 .member-card .member-name {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
