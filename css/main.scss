@@ -1,7 +1,43 @@
+// //Fluid Typography implementation
+// @function strip-unit($value) {
+//   @return $value / ($value * 0 + 1);
+// }
+
+// @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+//   $u1: unit($min-vw);
+//   $u2: unit($max-vw);
+//   $u3: unit($min-font-size);
+//   $u4: unit($max-font-size);
+//   @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+//     & {
+//       font-size: $min-font-size;
+//       @media screen and (min-width: $min-vw) {
+//         font-size: calc(
+//           #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+//             ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+//         );
+//       }
+//       @media screen and (min-width: $max-vw) {
+//         font-size: $max-font-size;
+//       }
+//     }
+//   }
+// }
+
+// $min_width: 320px;
+// $max_width: 1500px;
+// $min_font: 16px;
+// $max_font: 24px;
+// html {
+//   @include fluid-type($min_width, $max_width, $min_font, $max_font);
+// }
+
+// //end of flui font implementation
+
 * {
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  // font-size: 20px;
   background: #000000;
   color: #f1f1f1;
   font-family: "Courier New", Courier, monospace;
@@ -58,6 +94,7 @@ body {
   width: 100vw;
   height: 200vh;
   overflow-x: hidden;
+  font-size: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 5rem 5fr 5fr 5fr 5rem;
@@ -125,6 +162,8 @@ header {
 main {
   display: flex;
   place-content: center;
+  place-items: center;
+  min-height: 100vh;
   width: 100%;
   grid-area: main;
   .hero {
@@ -135,8 +174,9 @@ main {
     img {
       margin: 5rem 0rem;
       margin-bottom: 3rem;
-      width: 20rem;
-      height: 18rem;
+      min-width: 10rem;
+      width: 25rem;
+      max-width: 40rem;
     }
     h1 {
       font-size: 50px;
@@ -337,6 +377,9 @@ h1 {
         align-content: center;
         margin: 0.5rem 0.5rem;
         box-sizing: border-box;
+        padding: 2rem 1rem;
+        min-width: 200px;
+        max-width: 400px;
         box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
         border-radius: 10px;
         &:hover {
@@ -346,6 +389,7 @@ h1 {
         .member-avatar {
           border-radius: 5rem;
           margin-top: 1rem;
+          text-align: center;
           img {
             width: 200px;
           }
@@ -362,4 +406,126 @@ h1 {
 //remove 000webhost logo
 img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
   display: none;
+}
+
+nav {
+  a {
+    i {
+      display: none !important;
+    }
+  }
+}
+
+//Media queries
+// 4K
+
+// @media only screen and (min-width: 1800px) {
+//   * {
+//     font-size: 36px;
+//   }
+
+//   main {
+//     place-items: center;
+//   }
+// }
+
+//Mobile
+
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    display: none;
+  }
+  .spotify {
+    display: none;
+  }
+  .games .cards-section {
+    flex-direction: column;
+    margin: 0 auto;
+    min-width: 100vw;
+    place-items: center;
+    .cards {
+      max-width: 300px;
+    }
+  }
+
+  .members .members-section .r1 {
+    flex-direction: column;
+    place-items: center;
+
+    .member-card {
+      width: 300px;
+    }
+  }
+  .members .members-section .r2 {
+    flex-direction: column;
+    place-items: center;
+
+    .member-card {
+      width: 300px;
+    }
+  }
+
+  .description {
+    padding: 0 1rem;
+  }
+}
+
+nav {
+  position: relative;
+  z-index: 100;
+  ul {
+    li {
+      display: block;
+    }
+  }
+  a {
+    i {
+      display: block !important;
+    }
+  }
+}
+.topnav {
+  overflow: hidden;
+  background-color: rgb(7, 7, 7);
+  position: relative;
+  margin: 0;
+  padding: 0;
+  li {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: rgb(248, 248, 248);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
