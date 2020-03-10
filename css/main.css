@@ -240,6 +240,7 @@ main .hero h1 {
 .games .cards-section .cards {
   padding: 3rem 1rem;
   margin: 1rem 0.5rem;
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -398,7 +399,7 @@ h1 {
 }
 
 .footer {
-  -ms-grid-row: 5;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: foot;
@@ -514,7 +515,8 @@ h1 {
 
 .members .members-section .r1 .member-card .member-avatar img,
 .members .members-section .r2 .member-card .member-avatar img {
-  width: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 .members .members-section .r1 .member-card .member-name,
@@ -548,7 +550,7 @@ nav a i {
     place-items: center;
   }
   .games .cards-section .cards {
-    max-width: 300px;
+    width: 250px;
   }
   .members .members-section .r1 {
     -webkit-box-orient: vertical;
@@ -573,25 +575,26 @@ nav a i {
   .description {
     padding: 0 1rem;
   }
-}
-
-nav {
-  position: relative;
-  z-index: 100;
-}
-
-nav ul li {
-  display: block;
-}
-
-nav a i {
-  display: block !important;
+  nav {
+    position: relative;
+    z-index: 100;
+  }
+  nav ul li {
+    display: block;
+  }
+  nav a i {
+    display: block !important;
+    position: fixed;
+  }
+  main {
+    margin-top: 4rem;
+  }
 }
 
 .topnav {
   overflow: hidden;
   background-color: #070707;
-  position: relative;
+  position: fixed;
   margin: 0;
   padding: 0;
 }
@@ -633,5 +636,199 @@ nav a i {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.penthouse {
+  position: relative;
+  width: 100vw;
+  height: 200vh;
+  overflow-x: hidden;
+  font-size: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 5rem 2fr 2fr 5rem;
+      grid-template-rows: 5rem 2fr 2fr 5rem;
+      grid-template-areas: "nav2 nav2 nav2 " "main main main" "main2 main2 main2" "foot foot foot";
+}
+
+.penthouse .p-nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: nav2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.banner {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  text-align: center;
+  width: 100vw;
+}
+
+.banner img {
+  max-width: 1500px;
+  width: 80%;
+  height: auto;
+}
+
+.rooms-grid {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main2;
+  width: 100vw;
+  font-size: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rooms-grid .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-center;
+      -ms-flex-pack: space-center;
+          justify-content: space-center;
+}
+
+.rooms-grid .container .card {
+  position: relative;
+  margin: 0 1rem;
+}
+
+.rooms-grid .container .card .face {
+  width: 450px;
+  height: 300px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.rooms-grid .container .card .face1 {
+  position: relative;
+  background-color: black;
+  color: #e6e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+}
+
+.rooms-grid .container .card .face1 .content {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.rooms-grid .container .card .face1 .content img {
+  max-width: 450px;
+  max-height: 300px;
+}
+
+.rooms-grid .container .card .face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #cccccc;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.rooms-grid .container .card .face2 {
+  position: relative;
+  background-color: #0e0e0e;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+}
+
+.rooms-grid .container .card .face2 .content p {
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
+}
+
+.rooms-grid .container .card .face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #0e0e0e;
+  padding: 5px;
+  border: 1px solid #333;
+}
+
+.rooms-grid .container .card .face2 .content a:hover {
+  background: #0e0e0e;
+  color: #fff;
+}
+
+.rooms-grid .container .card:hover .face1 {
+  background: #0e0e0e;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.rooms-grid .container .card:hover .face1 .content {
+  opacity: 1;
+}
+
+.rooms-grid .container .card:hover .face2 {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 /*# sourceMappingURL=main.css.map */
