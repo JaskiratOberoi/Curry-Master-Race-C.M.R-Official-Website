@@ -27,7 +27,7 @@
           <li><a href="http://bit.ly/Join-CMR" target="_blank">Join us</a></li>
         </ul>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars" id="menu"></i>
+          <img src="./artwork/menu.png" alt="menu" />
         </a>
         <!-- Regular Nav -->
         <ul class="main-nav">
@@ -49,7 +49,11 @@
         <div class="card">
           <div class="face face1">
             <div class="content">
-              <img src="./artwork/penthouse/hometheatre.jpg" alt="text" />
+              <img
+                src="./artwork/penthouse/hometheatre.jpg"
+                alt="text"
+                id="img1"
+              />
               <h3>Home Theatre</h3>
             </div>
           </div>
@@ -70,7 +74,7 @@
         <div class="card">
           <div class="face face1">
             <div class="content">
-              <img src="./artwork/penthouse/bar.jpg" alt="text" />
+              <img src="./artwork/penthouse/bar.jpg" alt="text" id="img2" />
               <h3>Bar</h3>
             </div>
           </div>
@@ -91,7 +95,11 @@
         <div class="card">
           <div class="face face1">
             <div class="content">
-              <img src="./artwork/penthouse/dungeon.jfif" alt="text" />
+              <img
+                src="./artwork/penthouse/dungeon.jfif"
+                alt="text"
+                id="img3"
+              />
               <h3>Dungeon</h3>
             </div>
           </div>
@@ -110,6 +118,23 @@
           </div>
         </div>
       </div>
+      <div class="join">
+        <a href="#">Visit the penthouse</a>
+      </div>
     </div>
+
+    <footer>
+      <div class="footer">Jaskirat Singh Oberoi © 2020</div>
+    </footer>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("topnav");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>

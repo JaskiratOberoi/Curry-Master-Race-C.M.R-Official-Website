@@ -1,39 +1,3 @@
-// //Fluid Typography implementation
-// @function strip-unit($value) {
-//   @return $value / ($value * 0 + 1);
-// }
-
-// @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-//   $u1: unit($min-vw);
-//   $u2: unit($max-vw);
-//   $u3: unit($min-font-size);
-//   $u4: unit($max-font-size);
-//   @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
-//     & {
-//       font-size: $min-font-size;
-//       @media screen and (min-width: $min-vw) {
-//         font-size: calc(
-//           #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
-//             ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
-//         );
-//       }
-//       @media screen and (min-width: $max-vw) {
-//         font-size: $max-font-size;
-//       }
-//     }
-//   }
-// }
-
-// $min_width: 320px;
-// $max_width: 1500px;
-// $min_font: 16px;
-// $max_font: 24px;
-// html {
-//   @include fluid-type($min_width, $max_width, $min_font, $max_font);
-// }
-
-// //end of flui font implementation
-
 * {
   margin: 0;
   padding: 0;
@@ -292,39 +256,6 @@ h1 {
   }
 }
 
-.reddit {
-  position: fixed;
-  right: 0;
-  top: 215px;
-  display: flex;
-  background: rgba($color: #000000, $alpha: 0);
-  z-index: 20;
-
-  button {
-    position: relative;
-    border: none;
-    right: -30px;
-    height: 50px;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    color: #d12929;
-    z-index: 30;
-    transform: rotateZ(-90deg);
-    padding: 0.5rem 1rem;
-    box-shadow: 0px -3px 5px rgba(209, 41, 41, 0.4);
-    border-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    img {
-      width: 40px;
-    }
-  }
-}
-
 .hidden {
   display: none;
 }
@@ -412,7 +343,7 @@ img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhos
 
 nav {
   a {
-    i {
+    img {
       display: none !important;
     }
   }
@@ -463,15 +394,18 @@ nav {
   nav {
     position: relative;
     z-index: 100;
+    background: #000;
     ul {
       li {
         display: block;
       }
     }
     a {
-      i {
+      img {
         display: block !important;
-        position: fixed;
+        width: 15px;
+        height: auto;
+        color: #fff;
       }
     }
   }
@@ -558,6 +492,7 @@ nav {
   grid-area: main;
   text-align: center;
   width: 100vw;
+  margin-bottom: 2rem;
   img {
     max-width: 1500px;
     width: 80%;
@@ -625,7 +560,6 @@ nav {
         align-items: center;
         padding: 20px;
         box-sizing: border-box;
-        // box-shadow: 0 20px 30px rgba(248, 248, 248, 0.4);
         transform: translateY(-150px);
         .content {
           p {
@@ -661,5 +595,121 @@ nav {
         transform: translateY(0px);
       }
     }
+  }
+}
+
+.join {
+  text-align: center;
+  width: max-content;
+  height: max-content;
+  font-size: 30px;
+  justify-self: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 0.5rem 4rem;
+  border-radius: 5px;
+  background-color: color(primary);
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(184, 46, 31, 0.4);
+    transform: translateY(-2px);
+  }
+
+  a {
+    text-decoration: none;
+    background-color: color(primary);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+  }
+
+  .rooms-grid {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  .container {
+    flex-direction: column;
+    .card {
+      margin-top: 1rem;
+      .face {
+        width: 300px;
+        height: 200px;
+      }
+      .face1 {
+        max-width: 410px;
+        height: 200px;
+        position: relative;
+        transform: translateY(-150px);
+      }
+
+      .face2 {
+        max-width: 410px;
+        height: 200px;
+        position: relative;
+        transform: translateY(300px);
+        color: #fff;
+        text-align: justify;
+        .content {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+
+  #img1,
+  #img2,
+  #img3 {
+    max-width: 300px;
+    max-height: 200px;
+  }
+
+  .join {
+    padding: 0.5rem 1rem;
+    margin-bottom: 50px;
+    font-size: 25px;
+    a {
+      background-color: color(primary);
+    }
+  }
+
+  //main page ipad queries
+  .spotify {
+    display: none;
+  }
+  .games .cards-section {
+    flex-direction: column;
+    margin: 0 auto;
+    min-width: 100vw;
+    place-items: center;
+    .cards {
+      width: 250px;
+    }
+  }
+
+  .members .members-section .r1 {
+    flex-direction: column;
+    place-items: center;
+
+    .member-card {
+      width: 300px;
+    }
+  }
+  .members .members-section .r2 {
+    flex-direction: column;
+    place-items: center;
+
+    .member-card {
+      width: 300px;
+    }
+  }
+
+  .description {
+    padding: 0 1rem;
   }
 }
