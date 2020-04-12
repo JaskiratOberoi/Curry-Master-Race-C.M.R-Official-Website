@@ -28,7 +28,7 @@
 
 $colors: (
   primary: #b82e1f,
-  secondary: #000000
+  secondary: #000000,
 );
 
 @function color($color-name) {
@@ -276,6 +276,10 @@ h1 {
     margin-left: auto;
     margin-right: auto;
   }
+  a {
+    text-decoration: none;
+    color: #f1f1f1;
+  }
 }
 
 .members {
@@ -337,7 +341,8 @@ h1 {
 }
 
 //remove 000webhost logo
-img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]
+{
   display: none;
 }
 
@@ -508,6 +513,11 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  h1 {
+    background: linear-gradient(color(primary) 30%, rgb(22, 22, 22) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   // Cards for events with animations
   .container {
@@ -538,6 +548,7 @@ nav {
         .content {
           opacity: 1;
           transition: 0.5s;
+
           img {
             max-width: 450px;
             max-height: 300px;
@@ -566,6 +577,7 @@ nav {
             margin: 0;
             padding: 0;
             background: rgb(14, 14, 14);
+            text-align: justify;
           }
           a {
             margin: 15px 0 0;
@@ -619,6 +631,54 @@ nav {
   a {
     text-decoration: none;
     background-color: color(primary);
+  }
+}
+
+.bots-header {
+  font-size: 30px;
+  font-weight: bolder;
+  h1 {
+    background: linear-gradient(color(primary) 30%, rgb(22, 22, 22) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.bots {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  text-align: center;
+  margin: 1rem 5rem;
+  margin-bottom: 5rem;
+
+  a {
+    text-decoration: none;
+  }
+  .bot-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+    width: 300px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+
+    .bot-avatar {
+      text-align: center;
+      margin: 1rem;
+      img {
+        box-sizing: border-box;
+        border-radius: 15rem;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .bot-description {
+      font-size: 20px;
+      text-align: center;
+      margin: 1rem 1rem;
+    }
   }
 }
 
@@ -711,5 +771,23 @@ nav {
 
   .description {
     padding: 0 1rem;
+  }
+
+  .bots {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 5rem;
+
+    .bot-cards {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 2rem;
+      width: 300px;
+      box-sizing: border-box;
+      border-radius: 20px;
+      box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+    }
   }
 }
