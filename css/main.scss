@@ -61,12 +61,13 @@ body {
   font-size: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 5rem 5fr 5fr 5fr 5rem;
+  grid-template-rows: 5rem 5fr 5fr 5fr 5fr 5rem;
   grid-template-areas:
     "nav nav nav "
     "main main main"
     "main2 main2 main2"
     "members members members"
+    "penthouse penthouse penthouse"
     "foot foot foot";
 }
 
@@ -308,7 +309,7 @@ h1 {
 
       .member-card {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-content: center;
         margin: 0.5rem 0.5rem;
@@ -340,6 +341,37 @@ h1 {
   }
 }
 
+.penthouse-main{
+  grid-area: penthouse;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+  }
+
+  .posts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    iframe {
+      margin: 0 1rem;
+      width: 320px;
+      height: 500px;
+    }
+  }
+}
+
+
+
 //remove 000webhost logo
 img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]
 {
@@ -362,8 +394,27 @@ nav {
   .main-nav {
     display: none;
   }
+  .footer{
+    font-size: 0.8rem !important;
+  }
   .spotify {
     display: none;
+  }
+  .penthouse-main{
+
+  
+    .posts{
+      flex-direction: column;
+      margin-bottom: 3rem;
+      .remover{
+        display: none;
+      }
+      iframe {
+        margin: 0 1rem;
+        width: 280px ;
+        height: 450px;
+      }
+    }
   }
   .games .cards-section {
     flex-direction: column;
@@ -375,6 +426,10 @@ nav {
     }
   }
 
+  .members{
+    margin-left: 0;
+    margin-right: 0;
+  }
   .members .members-section .r1 {
     flex-direction: column;
     place-items: center;
